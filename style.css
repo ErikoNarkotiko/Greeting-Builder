@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: #14281d; /* Bardzo ciemna, głęboka leśna zieleń z tła grafiki */
+    background-image: linear-gradient(135deg, #1b3a2b 0%, #112217 100%);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Układ dwóch kolumn obok siebie */
+.app-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1100px;
+    width: 100%;
+    align-items: stretch;
+}
+
+/* Główne panele (Kafelki) */
+.card {
+    background: #234333; /* Odcień zieleni wzięty z wewnętrznych paneli grafiki */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px; /* Łagodne, nowoczesne zaokrąglenia */
+    padding: 35px;
+    flex: 1;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Miękki, głęboki cień warstwowy */
+    transition: transform 0.3s ease;
+}
+
+.icon-header {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #e2ece9;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #a3b8b0;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Pola input */
+.input-group {
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 13px;
+    color: #8da69c;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: #193327; /* Ciemniejsze wnętrze inputa */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #6da085;
+    background-color: #1d3b2d;
+    box-shadow: 0 0 0 4px rgba(109, 160, 133, 0.15);
+}
+
+/* Przycisk w stylu piaskowo-brązowego "Heses Roge" z obrazka */
+#button {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #234333;
+    background: linear-gradient(135deg, #e4c49b 0%, #c2a175 100%); /* Ciepły, piaskowy odcień ziemi */
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(194, 161, 117, 0.2);
+    transition: all 0.2s ease;
+}
+
+#button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(194, 161, 117, 0.3);
+}
+
+#button:active {
+    transform: translateY(1px);
+}
+
+/* Komunikat o błędzie */
+.error-text {
+    color: #e49b9b;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* LISTA */
+#users-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Element listy stylizowany na dolne kafelki z obrazka (brązowo-beżowe odcienie) */
+.user-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #44352a 0%, #352920 100%); /* Ciepły, matowy brąz */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 18px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    animation: fadeInSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Zdjęcie profilowe w kółeczku z delikatnym cieniem i obwódką */
+.avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e4c49b; /* Piaskowa obwódka avatara */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    background-color: #234333;
+}
+
+.user-info {
+    font-size: 15px;
+    font-weight: 600;
+    color: #f3ece4;
+    line-height: 1.4;
+}
+
+/* Płynna animacja wsuwania i pojawiania się nowych kafelków */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(15px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsywność */
+@media (max-width: 800px) {
+    .app-container {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <title>Pozdrowienia - Organic Premium</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+    <script src="plik.js" defer></script>
+<body>
+
+    <main class="app-container">
+        <section class="card form-box">
+            <div class="icon-header">🍃</div>
+            <h2>Panel Rejestracji</h2>
+            <p class="subtitle">Wpisz dane, aby wygenerować powitanie w organicznym stylu.</p>
+            
+            <div class="input-group">
+                <label for="name">Imię</label>
+                <input type="text" id="name" placeholder="np. Jan">
+            </div>
+
+            <div class="input-group">
+                <label for="surname">Nazwisko</label>
+                <input type="text" id="surname" placeholder="np. Radecki">
+            </div>
+
+            <button id="button" onclick="wyswietl_greetings()">Generuj Powitanie</button>
+            <p id="error-msg" class="error-text"></p>
+        </section>
+
+        <section class="card list-box">
+            <div class="icon-header">🏆</div>
+            <h2>Zarejestrowani</h2>
+            <p class="subtitle">Lista osób, które otrzymały unikalny profil.</p>
+            
+            <ul id="users-list">
+                </ul>
+        </section>
+    </main>
+
+</body>
+</html>
